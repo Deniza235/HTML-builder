@@ -7,7 +7,7 @@
   }
 
   async function copyFolder(curPath, copyPath) {
-    await fsPromise.mkdir(copyPath, {recursive: true, force: true});
+    await fsPromise.mkdir(copyPath, {recursive: true});
     const files = await fsPromise.readdir(curPath, {withFileTypes: true});
     for(let file of files) {
       if(file.isFile()) {
